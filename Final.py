@@ -32,7 +32,8 @@ def pdf_extractor(input):
         excel_info.append(individual[6])
         excel_info.append(k[0:10])
         excel_info.append(j[0:10])
-
+    
+    #the if/then statement exists because old pdfs were found that stored the information in a different place.  Seems to work for all.  Might need to add more logic in the future if more are found 
     #this is appending the original list with the information wanted 
 
     return(excel_info)
