@@ -14,12 +14,24 @@ def pdf_extractor(input):
     pdf_text = pdf_object.extractText()
     individual = pdf_text.splitlines()
     #these lines open the pdf convert it to a string then split each piece of information into its own part of a list
+    x = individual[12][0]
 
-    excel_info.append(individual[35])
-    excel_info.append(individual[5])
-    excel_info.append(individual[6])
-    excel_info.append(individual[9])
-    excel_info.append(individual[12])
+    if x.isnumeric():
+        k = individual[9]
+        j = individual[12]
+        excel_info.append(individual[35])
+        excel_info.append(individual[5])
+        excel_info.append(individual[6])
+        excel_info.append(k[0:10])
+        excel_info.append(j[0:10])
+    else:
+        k = individual[9]
+        j = individual[13]
+        excel_info.append(individual[37])
+        excel_info.append(individual[5])
+        excel_info.append(individual[6])
+        excel_info.append(k[0:10])
+        excel_info.append(j[0:10])
 
     #this is appending the original list with the information wanted 
 
